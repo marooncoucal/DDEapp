@@ -27,6 +27,11 @@ const MaterialTopTabs = createMaterialTopTabNavigator()
 
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
+const picAboutface = require('./assets/aboutface.png')
+const picHydra = require('./assets/hydra.png')
+const picUnsee = require('./assets/unsee.png')
+const picAwards = require('./assets/awards.png')
+
 export default function App() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
@@ -176,7 +181,7 @@ const cards = [
   {
     id:1, 
     link:'https://www.awwwards.com/',
-    pic:`require('./assets/awards.png')`,
+    pic: picAwards,
     title: 'Awwwards',
     text:'Сайт, публикующий интересные сайты, направлен на продвижение лучших инновационных разработок в вебе',
     tag1:'веб-дизайн', 
@@ -188,7 +193,7 @@ const cards = [
   {
     id:2, 
     link:'https://cantunsee.space/',
-    pic:`require('./assets/unsee.png')`,
+    pic: picUnsee,
     title: `Can't Unsee`, 
     text:'Игра для дизайнеров для проверки знаний в дизайне интерфейсов',
     tag1:'веб-дизайн', 
@@ -200,7 +205,7 @@ const cards = [
   {
     id:3, 
     link:'https://hydra.ojack.xyz/',
-    pic:`require('./assets/hydra.png')`,
+    pic: picHydra,
     title: 'Hydra: Live Coding Visuals',
     text:'Среда кодирования с возможностью изменения кода в реальном времени, которая запускается непосредственно в браузере.',
     tag1:'веб-дизайн', 
@@ -212,7 +217,7 @@ const cards = [
   {
     id:4, 
     link:'https://www.wiley.com/en-gb/About+Face%3A+The+Essentials+of+Interaction+Design%2C+4th+Edition-p-9781118766583',
-    pic:`require('./assets/aboutface.png')`,
+    pic: picAboutface,
     title: 'Об интерфейсах: основы интерактивного дизайна',
     text:'«Об интерфейсах» — это книга, которая вывела интерактивный дизайн из исследовательских лабораторий в повседневный лексикон, а обновленное четвертое издание продолжает лидировать в идеях и методах, актуальных для сегодняшних практиков дизайна и разработчиков.',
     tag1:'веб-дизайн', 
@@ -244,7 +249,7 @@ function CardScreen({route}){
         <View style={{width: '100%', height: 180, 
         backgroundColor:'', justifyContent: 'center', alignItems: 'center', display: 'flex'}}>
             <Image 
-            source={require()} resizeMode={"contain"}
+            source={pic} resizeMode={"contain"}
             style={{width:"100%", height:"100%", borderRadius: 10, overflow: 'hidden'}}/>
         </View>
 
