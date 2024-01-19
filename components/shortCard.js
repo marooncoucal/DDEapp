@@ -1,4 +1,5 @@
 import { Pressable, View, Text, Image } from "react-native";
+import { DotTag, Heading3, SCardText } from "./text";
 
 // let cardData = [
 //     {
@@ -85,9 +86,9 @@ import { Pressable, View, Text, Image } from "react-native";
 //     )
 // }
 
-export default function ShortCardList(){
-    return(
-        <View style={{paddingBottom: 0}}>
+export default function ShortCardList() {
+    return (
+        <View style={{ paddingBottom: 0 }}>
             <ShortCard1></ShortCard1>
             <ShortCard2></ShortCard2>
             <ShortCard3></ShortCard3>
@@ -96,73 +97,82 @@ export default function ShortCardList(){
     )
 }
 
-export function ShortCard(){
-    return(
-        <View style={{height:100, width: 280, paddingLeft:10, paddingRight:10, justifyContent:'center'}}>
-            <View style={{flexDirection:'row'}}>
-                <View style={{width: 80, height: 80, padding: 4, display: 'flex', justifyContent: 'center', alignItems:'center'}}>
-                    <View style={{backgroundColor:'gray', flex: 1, alignSelf: 'stretch', borderRadius: 10, overflow: 'hidden', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-                        <Image 
-                            source={require('../assets/awards.png')} 
-                            style={{width:80, height:80}} resizeMode={"contain"}
+export function ShortCard({ title, text, tag1, tag2, pic }) {
+    return (
+        <View style={{
+            height: 100, width: 280, paddingLeft: 10, paddingRight: 10, justifyContent: 'center'
+        }}>
+            <View style={{ flexDirection: 'row' }}>
+
+                <View style={{
+                    width: 84, height: 84, padding: 4, display: 'flex', justifyContent: 'center', alignItems: 'center',
+                }}>
+                    <View style={{
+                        flex: 1, width: "100%", height: "100%", borderRadius: 10, overflow: 'hidden', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'
+                    }}>
+                        <Image
+                            source={pic} resizeMode={"cover"}
+                            style={{ width: '100%', height: 84 }}
                         />
                     </View>
                 </View>
-                <View style={{width: '100%', paddingTop: 12, paddingLeft: 12, paddingRight: 12, paddingBottom: 18, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', display: 'flex'}}>
-                    <Text style={{width: '100%', color: 'black', fontSize: 20, fontWeight: '600'}} numberOfLines={4} ellipsizeMode='tail'>
-                        Awwwards
-                    </Text>
-                    <Text style={{width: '100%', color: '#555555', fontSize: 14, fontWeight: '300', lineHeight: 21}} numberOfLines={1} ellipsizeMode='tail'>
-                        Сайт, публикующий интересные сайты, направлен на продвижение лучших инновационных разработок в вебе
-                    </Text>
+
+                <View style={{
+                    width: '100%', gap: 2, paddingTop: 12, paddingLeft: 12, paddingRight: 12, paddingBottom: 18, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', display: 'flex'
+                }}>
+                    <Heading3>{title}</Heading3>
+                    <View style={{
+                        flexDirection: 'row', gap: 4, display: 'flex', alignItems: 'center'
+                    }}>
+                        <SCardText>{tag1}</SCardText>
+                        <DotTag></DotTag>
+                        <SCardText>{tag2}</SCardText>
+                    </View>
+                </View>
+
+            </View>
+        </View>
+    )
+}
+
+export function ShortCard1() {
+    return (
+        <View style={{ height: 100, width: 280, paddingLeft: 10, paddingRight: 10, justifyContent: 'center' }}>
+            <View style={{ flexDirection: 'row' }}>
+                <View style={{ width: 80, height: 80, padding: 4, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <View style={{ backgroundColor: 'gray', flex: 1, alignSelf: 'stretch', borderRadius: 10, overflow: 'hidden', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                        <Image
+                            source={require('../assets/awards.png')}
+                            style={{ width: 80, height: 80 }} resizeMode={"contain"}
+                        />
+                    </View>
+                </View>
+                <View style={{ width: '100%', gap: 2, paddingTop: 12, paddingLeft: 12, paddingRight: 12, paddingBottom: 18, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', display: 'flex' }}>
+                    <Heading3>Awwwards</Heading3>
+                    <SCardText>Сайт, публикующий интересные сайты, направлен на продвижение лучших инновационных разработок в вебе</SCardText>
                 </View>
             </View>
         </View>
     )
 }
 
-export function ShortCard1(){
-    return(
-        <View style={{height:100, width: 280, paddingLeft:10, paddingRight:10, justifyContent:'center'}}>
-            <View style={{flexDirection:'row'}}>
-                <View style={{width: 80, height: 80, padding: 4, display: 'flex', justifyContent: 'center', alignItems:'center'}}>
-                    <View style={{backgroundColor:'gray', flex: 1, alignSelf: 'stretch', borderRadius: 10, overflow: 'hidden', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-                        <Image 
-                            source={require('../assets/awards.png')} 
-                            style={{width:80, height:80}} resizeMode={"contain"}
+export function ShortCard2() {
+    return (
+        <View style={{ height: 100, width: 280, paddingLeft: 10, paddingRight: 10, justifyContent: 'center' }}>
+            <View style={{ flexDirection: 'row' }}>
+                <View style={{ width: 80, height: 80, padding: 4, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <View style={{ backgroundColor: 'gray', flex: 1, alignSelf: 'stretch', borderRadius: 10, overflow: 'hidden', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                        <Image
+                            source={require('../assets/unsee.png')}
+                            style={{ width: 80, height: 80 }} resizeMode={"contain"}
                         />
                     </View>
                 </View>
-                <View style={{width: '100%', paddingTop: 12, paddingLeft: 12, paddingRight: 12, paddingBottom: 18, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', display: 'flex'}}>
-                    <Text style={{width: '100%', color: 'black', fontSize: 20, fontWeight: '600'}} numberOfLines={1} ellipsizeMode='tail'>
-                        Awwwards
-                    </Text>
-                    <Text style={{width: '100%', color: '#555555', fontSize: 14, fontWeight: '300', lineHeight: 21}} numberOfLines={2} ellipsizeMode='tail'>
-                        Сайт, публикующий интересные сайты, направлен на продвижение лучших инновационных разработок в вебе
-                    </Text>
-                </View>
-            </View>
-        </View>
-    )
-}
-
-export function ShortCard2(){
-    return(
-        <View style={{height:100, width: 280, paddingLeft:10, paddingRight:10, justifyContent:'center'}}>
-            <View style={{flexDirection:'row'}}>
-                <View style={{width: 80, height: 80, padding: 4, display: 'flex', justifyContent: 'center', alignItems:'center'}}>
-                    <View style={{backgroundColor:'gray', flex: 1, alignSelf: 'stretch', borderRadius: 10, overflow: 'hidden', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-                        <Image 
-                            source={require('../assets/unsee.png')} 
-                            style={{width:80, height:80}} resizeMode={"contain"}
-                        />
-                    </View>
-                </View>
-                <View style={{width: '100%', paddingTop: 12, paddingLeft: 12, paddingRight: 12, paddingBottom: 18, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', display: 'flex'}}>
-                    <Text style={{width: '100%', color: 'black', fontSize: 20, fontWeight: '600'}} numberOfLines={1} ellipsizeMode='tail'>
+                <View style={{ width: '100%', paddingTop: 12, paddingLeft: 12, paddingRight: 12, paddingBottom: 18, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', display: 'flex' }}>
+                    <Text style={{ width: '100%', color: 'black', fontSize: 20, fontWeight: '600' }} numberOfLines={1} ellipsizeMode='tail'>
                         Can't Unsee
                     </Text>
-                    <Text style={{width: '100%', color: '#555555', fontSize: 14, fontWeight: '300', lineHeight: 21}} numberOfLines={2} ellipsizeMode='tail'>
+                    <Text style={{ width: '100%', color: '#555555', fontSize: 14, fontWeight: '300', lineHeight: 21 }} numberOfLines={2} ellipsizeMode='tail'>
                         Игра для дизайнеров для проверки знаний в дизайне интерфейсов
                     </Text>
                 </View>
@@ -171,23 +181,23 @@ export function ShortCard2(){
     )
 }
 
-export function ShortCard3(){
-    return(    
-        <View style={{height:100, width: 280, paddingLeft:10, paddingRight:10, justifyContent:'center'}}>
-            <View style={{flexDirection:'row'}}>
-                <View style={{width: 80, height: 80, padding: 4, display: 'flex', justifyContent: 'center', alignItems:'center'}}>
-                    <View style={{backgroundColor:'gray', flex: 1, alignSelf: 'stretch', borderRadius: 10, overflow: 'hidden', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-                        <Image 
-                            source={require('../assets/hydra.png')} 
-                            style={{width:80, height:80}} resizeMode={"contain"}
+export function ShortCard3() {
+    return (
+        <View style={{ height: 100, width: 280, paddingLeft: 10, paddingRight: 10, justifyContent: 'center' }}>
+            <View style={{ flexDirection: 'row' }}>
+                <View style={{ width: 80, height: 80, padding: 4, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <View style={{ backgroundColor: 'gray', flex: 1, alignSelf: 'stretch', borderRadius: 10, overflow: 'hidden', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                        <Image
+                            source={require('../assets/hydra.png')}
+                            style={{ width: 80, height: 80 }} resizeMode={"contain"}
                         />
                     </View>
                 </View>
-                <View style={{width: '100%', paddingTop: 12, paddingLeft: 12, paddingRight: 12, paddingBottom: 18, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', display: 'flex'}}>
-                    <Text style={{width: '100%', color: 'black', fontSize: 20, fontWeight: '600'}} numberOfLines={1} ellipsizeMode='tail'>
+                <View style={{ width: '100%', paddingTop: 12, paddingLeft: 12, paddingRight: 12, paddingBottom: 18, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', display: 'flex' }}>
+                    <Text style={{ width: '100%', color: 'black', fontSize: 20, fontWeight: '600' }} numberOfLines={1} ellipsizeMode='tail'>
                         Hydra: Live Coding Visuals
                     </Text>
-                    <Text style={{width: '100%', color: '#555555', fontSize: 14, fontWeight: '300', lineHeight: 21}} numberOfLines={2} ellipsizeMode='tail'>
+                    <Text style={{ width: '100%', color: '#555555', fontSize: 14, fontWeight: '300', lineHeight: 21 }} numberOfLines={2} ellipsizeMode='tail'>
                         Среда кодирования с возможностью изменения кода в реальном времени, которая запускается непосредственно в браузере
                     </Text>
                 </View>
@@ -196,25 +206,25 @@ export function ShortCard3(){
     )
 }
 
-export function ShortCard4(){
-    return(
-        <View style={{height:100, width: 280, paddingLeft:10, paddingRight:10, justifyContent:'center'}}>
-            <View style={{flexDirection:'row'}}>
+export function ShortCard4() {
+    return (
+        <View style={{ height: 100, width: 280, paddingLeft: 10, paddingRight: 10, justifyContent: 'center' }}>
+            <View style={{ flexDirection: 'row' }}>
 
-                <View style={{width: 80, height: 80, padding: 4, display: 'flex', justifyContent: 'center', alignItems:'center'}}>
-                    <View style={{backgroundColor:'#eee', flex: 1, alignSelf: 'stretch', borderRadius: 10, overflow: 'hidden', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-                        <Image 
-                            source={require('../assets/aboutface.png')} 
-                            style={{width: 80, height: 80}} resizeMode={"contain"}
+                <View style={{ width: 80, height: 80, padding: 4, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <View style={{ backgroundColor: '#eee', flex: 1, alignSelf: 'stretch', borderRadius: 10, overflow: 'hidden', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                        <Image
+                            source={require('../assets/aboutface.png')}
+                            style={{ width: 80, height: 80 }} resizeMode={"contain"}
                         />
                     </View>
                 </View>
 
-                <View style={{width: '100%', paddingTop: 12, paddingLeft: 12, paddingRight: 12, paddingBottom: 18, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', display: 'flex'}}>
-                    <Text style={{width: '100%', color: 'black', fontSize: 20, fontWeight: '600'}} numberOfLines={1} ellipsizeMode='tail'>
+                <View style={{ width: '100%', paddingTop: 12, paddingLeft: 12, paddingRight: 12, paddingBottom: 18, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', display: 'flex' }}>
+                    <Text style={{ width: '100%', color: 'black', fontSize: 20, fontWeight: '600' }} numberOfLines={1} ellipsizeMode='tail'>
                         About Face
                     </Text>
-                    <Text style={{width: '100%', color: '#555555', fontSize: 14, fontWeight: '300', lineHeight: 21}} numberOfLines={2} ellipsizeMode='tail'>
+                    <Text style={{ width: '100%', color: '#555555', fontSize: 14, fontWeight: '300', lineHeight: 21 }} numberOfLines={2} ellipsizeMode='tail'>
                         «Об интерфейсах» — это книга, которая вывела интерактивный дизайн из исследовательских лабораторий в повседневный лексикон, а обновленное четвертое издание продолжает лидировать в идеях и методах, актуальных для сегодняшних практиков дизайна и разработчиков
                     </Text>
                 </View>
